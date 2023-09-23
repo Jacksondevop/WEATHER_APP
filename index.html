@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: #ffffff url("./images/weather_thunder1.jpg.jpg") no-repeat fixed ;
+            background-size: 100% 100vh;
+            margin: 0;
+        }
+
+        a.navbar-brand {
+
+            font-family: 'Bungee Spice', cursive;
+        }
+       
+    </style>
+
+</head>
+
+<body>
+
+<!-- nav -->
+    <section>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary p-0 " style="background-color: #e3f2fd;">
+            <div class="container-fluid b">
+                <div class="">
+                    <img src="./images/logo-3.jpg" style="width: 50px;height: 50px;" alt="">
+                </div>
+                <a class="navbar-brand" href="#">WeatherMate</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+                </div>
+
+
+
+            </div>
+
+        </nav>
+    </section>
+ <!-- nav -->
+
+<!-- Search Bar starts -->
+    <section>
+        <!-- <div class="container w-50 my-5 d-flex justify-content-center p-0">
+           <div class="row"> -->
+                <form class="">
+                    <div class="container w-50">
+                       <div class="row form-inline d-flex my-5">
+                            <div class="col-md-8">
+                                <input id="search_inp" class="form-control mr-sm-2" type="search" placeholder="Search"
+                                    aria-label="Search" value="">
+                            </div>
+                           <div class="col-md-4 d-md-center">
+                                <button id="search_btn" class="btn btn-outline-transparent text-white border-white my-2 my-sm-0"
+                                    type="button">Search</button>
+                           </div>
+                        </form>
+                       </div>
+                    </div>
+           <!-- </div>
+        </div> -->
+
+    </section>
+ <!-- search bar ends -->
+<!-- weather card starts -->
+<div id="curr_loc" class="text-center d-flex justify-content-center"><a  class="text-white " href="#" style="text-decoration: none;">use current Location</a></div>
+
+   <section>
+
+        <div id="d_weather_card" class=" container" style="height: 300px; display: none;">
+    
+    
+           <div class="row d-flex justify-content-center">
+                <div id="" class="card mb-3 bg bg-transparent text-white border rounded border-light p-2 m-5 "
+                    style="max-width: 300px;max-height: 400px;">
+            
+                    <div class="row g-0">
+            
+                        <div>
+                            <h6 id="cd_location" class="card-title"></h6>
+                            <p id="cd_country"></p>
+                        </div>
+                
+                        <div class="col-md-8">
+                            <div class="card-body d-flex">
+                                <div>
+                                    <i class="fa-solid fa-cloud-moon fa-5x"></i>
+                
+                                </div>
+                
+                                <div>
+                                    <h1><span id="temperature"></span><span>&#8451;</span></h1>
+                
+                                </div>
+                
+                            </div>
+                        </div>
+                        <p id="status"></p>
+                    </div>
+                </div>
+           </div>
+        
+        
+            
+        </div>
+   </section>
+<!-- weather cards ends -->
+
+    <!-- weather details min-temp max-temp starts-->
+
+    <section>
+        <div id="d_detail" class=" text-white container w-50" style="margin-top: 50px;display: none;">
+            <div class="row  d-flex justify-content-between ">
+                <div class="col-md-2 ml-3">
+                    <div class="d-flex">
+                        <div><i class="fa-solid fa-temperature-high fa-2x"></i></div>
+
+                        <div><span id="temp_max" style="font-size: 45px;font-weight: bold;"></span>°C</div>
+                    </div>
+                    <h5>temp max</h5>
+
+                </div>
+                <div class=" col-md-2 ml-3">
+                    <div class="d-flex">
+                        <div><i class="fa-solid fa-temperature-high fa-2x"></i></div>
+                        <div><span id="temp_min" style="font-size: 45px; font-weight: bold;"></span>°C</div>
+
+                    </div>
+                    <h5>temp min</h5>
+                </div>
+                <div class="col-md-2 ml-3">
+                    <div class="d-flex">
+                       <div><i class="fa-solid fa-wind fa-2x"></i></div> 
+                       <div><span id="wind_speed" style="font-size: 45px; font-weight: bold;"></span>km/hr</div>
+                       
+                    </div>
+                    <div> <h5>wind speed</h5></div>
+                   
+                </div>
+                <div class="col-md-2 ml-3">
+                   <div class="row">
+                        <div><i class="fa-solid fa-droplet fa-2x"></i></div>
+                        <div><span id="humidity" style="font-size: 45px;font-weight: bold;"></span>%</div>
+                   </div>
+                    
+                    <div><h5 id="humidity"></h5></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- weataher details min-temp max-temp -->
+
+
+
+    <!-- </main> -->
+
+
+
+</body>
+
+<script src="./weather_logic.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+</html>
